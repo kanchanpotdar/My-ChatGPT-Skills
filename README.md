@@ -23,6 +23,22 @@ Supported logical commands include:
 - `/revise` — update the previously generated prompt
 - `/run` — execute the latest finalized prompt when possible
 
+### [ELI5](./skills/eli5/)
+
+Creates simple visual HTML explainers for beginners, with large visuals and minimal text. Invoke it with `/eli5 <topic>`.
+
+### [Grilling](./skills/grilling/)
+
+Stress-tests plans and ideas through rounds of decision-tree questions. It activates only when the user explicitly says “grill.”
+
+### [Idea Refine](./skills/idea-refine/)
+
+Sharpens an existing idea into an actionable direction and ends with a one-page brief covering assumptions, MVP scope, and a “Not Doing” list.
+
+### [Professional Report Generator](./skills/professional-report-generator/)
+
+Researches a topic and creates a publication-ready Word report with structured findings, tables, citations, bibliography, and consistent formatting.
+
 ## Repository structure
 
 Each skill lives in its own folder under `skills/` and should include:
