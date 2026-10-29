@@ -31,3 +31,13 @@ Each skill lives in its own folder under `skills/` and should include:
 - `README.md` — a brief description and usage guide
 
 As new skills are added, this README will be updated with their purpose and links.
+
+## Install as a local plugin
+
+This repository includes a local marketplace catalog at `.agents/plugins/marketplace.json`. From the repository root, add it as a marketplace with:
+
+```bash
+codex plugin marketplace add .
+```
+
+Then open the Plugins Directory in the ChatGPT desktop app, select the `my-chatgpt-skills` marketplace, and install the plugin. Restart the app after adding or updating the plugin if it does not appear immediately.
