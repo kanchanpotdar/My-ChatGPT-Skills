@@ -1,0 +1,30 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "my-chatgpt-skills",
+  "version": "0.1.0",
+  "description": "A collection of reusable skills that guide ChatGPT through repeatable workflows.",
+  "author": {
+    "name": "Kanchan Potdar"
+  },
+  "repository": "https://github.com/kanchanpotdar/My-ChatGPT-Skills",
+  "license": "MIT",
+  "keywords": [
+    "chatgpt",
+    "skills",
+    "prompting",
+    "productivity"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "My ChatGPT Skills",
+        "shortDescription": "Reusable ChatGPT skills",
+        "longDescription": "A growing collection of reusable instruction-based skills for ChatGPT and Codex workflows.",
+        "developerName": "Kanchan Potdar",
+        "category": "Productivity",
+        "capabilities": [],
+        "defaultPrompt": "Help me use the appropriate reusable skill for this task."
+      }
+    }
+  }
+}

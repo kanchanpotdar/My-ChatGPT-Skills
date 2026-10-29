@@ -1,4 +1,3 @@
-```markdown
 ---
 name: prompt-optimizer
 description: >
@@ -233,4 +232,3 @@ time-series validation, evaluation, visualization,
 and expected deliverables.
 
 Do not invent performance targets or guarantee accuracy.
-```

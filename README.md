@@ -10,7 +10,7 @@ Skills are designed to be reusable. They can be refined over time as new use cas
 
 ## Available skills
 
-### [Prompt Optimizer](./prompt-optimizer-skill/)
+### [Prompt Optimizer](./skills/prompt-optimizer/)
 
 Transforms rough, unstructured instructions into clear, precise, and reusable prompts for AI assistants. It identifies the user's objective, preserves important technical details, asks focused clarification questions when needed, and returns a copy-ready optimized prompt.
 
@@ -25,7 +25,7 @@ Supported logical commands include:
 
 ## Repository structure
 
-Each skill lives in its own folder and should include:
+Each skill lives in its own folder under `skills/` and should include:
 
 - `SKILL.md` — the instructions ChatGPT follows
 - `README.md` — a brief description and usage guide
