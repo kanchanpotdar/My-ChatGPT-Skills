@@ -39,6 +39,10 @@ Sharpens an existing idea into an actionable direction and ends with a one-page 
 
 Researches a topic and creates a publication-ready Word report with structured findings, tables, citations, bibliography, and consistent formatting.
 
+### [Teach Me](./skills/teach-me/)
+
+An interactive learning and active-recall tutor for academic subjects, lecture notes, textbooks, PDFs, slides, technical concepts, and research papers. It teaches in manageable phases, evaluates recall, reinforces weak areas, and builds toward university-style examinations.
+
 ## Repository structure
 
 Each skill lives in its own folder under `skills/` and should include:
