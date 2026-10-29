@@ -1,0 +1,27 @@
+{
+  "interface": {
+    "capabilities": [],
+    "category": "Productivity",
+    "defaultPrompt": "Help me use the appropriate reusable skill for this task.",
+    "developerName": "Kanchan Potdar",
+    "displayName": "My ChatGPT Skills",
+    "longDescription": "A growing collection of reusable instruction-based skills for ChatGPT and Codex workflows.",
+    "shortDescription": "Reusable ChatGPT skills"
+  },
+  "name": "my-chatgpt-skills",
+  "version": "0.1.1",
+  "description": "A collection of reusable skills that guide ChatGPT through repeatable workflows.",
+  "author": {
+    "name": "Kanchan Potdar",
+    "email": "kanchanpotdar15@gmail.com"
+  },
+  "keywords": [
+    "chatgpt",
+    "skills",
+    "prompting",
+    "productivity"
+  ],
+  "repository": "https://github.com/kanchanpotdar/My-ChatGPT-Skills",
+  "license": "MIT",
+  "skills": "./skills"
+}

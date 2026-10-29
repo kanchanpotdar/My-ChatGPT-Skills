@@ -1,9 +1,10 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "my-chatgpt-skills",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A collection of reusable skills that guide ChatGPT through repeatable workflows.",
   "author": {
+    "email": "kanchanpotdar15@gmail.com",
     "name": "Kanchan Potdar"
   },
   "repository": "https://github.com/kanchanpotdar/My-ChatGPT-Skills",
