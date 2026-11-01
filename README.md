@@ -1,6 +1,6 @@
 # My ChatGPT Skills
 
-This repository is a growing collection of reusable skills for ChatGPT. Each skill is a self-contained set of instructions that gives ChatGPT a repeatable way to handle a specific type of task.
+This repository contains the **My ChatGPT Skills** plugin (version **0.1.4**), a collection of seven reusable skills for ChatGPT and Codex. Each skill is a self-contained set of instructions that gives ChatGPT a repeatable way to handle a specific type of task.
 
 ## How to use these skills
 
@@ -9,6 +9,12 @@ Browse the skill folders and open the relevant `SKILL.md` file. Add the skill's 
 Skills are designed to be reusable. They can be refined over time as new use cases, commands, and quality requirements are added.
 
 ## Available skills
+
+### [Repo Catch-Up](./skills/repo-catch-up/)
+
+Reconstructs an existing project's purpose, architecture, progress, decisions, datasets, experiments, and open tasks before work resumes. Supports mixed repositories and folders without Git history, provides source evidence and coverage limits, and ends with a continuation brief. Inspects the target project read-only.
+
+Example: “Use repo-catch-up on `/path/to/project` before we continue.” It returns an orientation with source references and a continuation brief; specify an authorized output path if you want the brief saved.
 
 ### [Prompt Optimizer](./skills/prompt-optimizer/)
 
