@@ -1,6 +1,8 @@
-# Prompt Optimizer v2.0
+# Prompt Optimizer v3.0
 
-Prompt Optimizer v2.0 turns rough instructions into clear, efficient, reusable prompts by treating them as work specifications. It adapts the amount of structure to the task instead of making every prompt unnecessarily long.
+Prompt Optimizer v3.0 turns rough instructions into clear, efficient, reusable prompts by treating them as work specifications. It adapts the amount of structure to the task instead of making every prompt unnecessarily long.
+
+It activates when a chat asks about a `prompt`, or uses phrases such as `revise the prompt`, `improve the prompt`, or `optimize the prompt`.
 
 ## What it does
 

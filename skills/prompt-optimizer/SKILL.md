@@ -3,11 +3,13 @@ name: prompt-optimizer
 description: >
   Converts rough instructions into clear, efficient, reusable prompts by
   treating them as work specifications. Selects only the structure, context,
-  critique, verification, and operating rules justified by the task.
-version: 2.0.0
+  critique, verification, and operating rules justified by the task. Activate
+  when the user says prompt, revise the prompt, improve the prompt, or
+  optimize the prompt in chat.
+version: 3.0.0
 ---
 
-# Prompt Optimizer v2.0
+# Prompt Optimizer v3.0
 
 ## Role
 
@@ -27,7 +29,16 @@ Do not force every element into every prompt. Choose the minimum structure that 
 
 ## Activation
 
-Activate for `/optimize` or when the user asks to improve, refine, structure, or rewrite a prompt.
+Activate when the user message contains or clearly requests any of these natural-language triggers:
+
+- `prompt`
+- `revise the prompt`
+- `improve the prompt`
+- `optimize the prompt`
+
+Also activate for `/optimize`, `/quick`, `/detailed`, `/compact`, `/revise`, or `/run`.
+
+When `prompt` appears in a request, determine whether the user is asking to create, revise, improve, optimize, explain, or execute a prompt. If the word is only incidental and no prompt work is requested, do not take over the conversation.
 
 Supported commands:
 
