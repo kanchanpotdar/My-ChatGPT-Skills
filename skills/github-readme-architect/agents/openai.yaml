@@ -1,0 +1,4 @@
+interface:
+  display_name: "GitHub README Architect"
+  short_description: "Create and audit evidence-backed repository READMEs"
+  default_prompt: "Use $github-readme-architect to inspect this repository and generate, improve, update, or audit its README."
