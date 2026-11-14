@@ -16,6 +16,22 @@ Each skill defines when it applies, how the assistant should work, and what it s
 
 ## Available skills
 
+### Skills at a glance
+
+| Skill | Short description | Link |
+| --- | --- | --- |
+| GitHub README Architect | Evidence-backed README generation, synchronization, and auditing. | [Open skill](./skills/github-readme-architect/SKILL.md) |
+| Repo Catch-Up | Read-only orientation for an unfamiliar repository or project folder. | [Open skill](./skills/repo-catch-up/SKILL.md) |
+| Prompt Optimizer | Turns rough requests into precise, reusable work specifications. | [Open skill](./skills/prompt-optimizer/SKILL.md) |
+| ELI5 | Creates simple, visual-first HTML explanations for difficult topics. | [Open skill](./skills/eli5/SKILL.md) |
+| Grilling | Runs explicit, round-by-round questioning to expose hidden assumptions. | [Open skill](./skills/grilling/SKILL.md) |
+| Idea Refine | Expands and stress-tests an existing idea into an actionable brief. | [Open skill](./skills/idea-refine/SKILL.md) |
+| Professional Report Generator | Produces researched, cited, publication-ready Word reports. | [Open skill](./skills/professional-report-generator/SKILL.md) |
+| Teach Me | Provides interactive tutoring, active recall, and adaptive practice. | [Open skill](./skills/teach-me/SKILL.md) |
+| Last30Days | Finds and synthesizes recent trends, releases, papers, projects, and signals. | [Open skill](./skills/last30days/SKILL.md) |
+
+The sections below explain what each skill does, show a representative prompt, and clarify when it is—and is not—the right tool.
+
 ### [GitHub README Architect](./skills/github-readme-architect/SKILL.md)
 
 Generates, improves, updates, or audits GitHub READMEs by inspecting source code, tracing central workflows, and checking relevant available history. Covers architecture, setup, implementation status, experiments, results, and limitations only where evidence supports them. Historical conversations are optional.
@@ -31,11 +47,15 @@ Auto selects a mode from the request and repository state. In Codex, invoke `$gi
 
 The skill maintains an internal evidence ledger and distinguishes verified, inferred, planned, and unknown claims. Its optional Python checker inspects local Markdown paths, code fences, and possible credentials; it does not establish technical accuracy, execute project commands, or reproduce metrics. See its [verification guide](./skills/github-readme-architect/references/verification.md) for scope and limitations.
 
+Example: “Update this README from the current implementation, including setup, architecture, tests, and known limitations.” It is useful when documentation has drifted or a repository needs a trustworthy contributor entry point. It is not a feature implementation tool, benchmark runner, or substitute for technical review.
+
 ### [Repo Catch-Up](./skills/repo-catch-up/)
 
 Reconstructs an existing project's purpose, architecture, progress, decisions, datasets, experiments, and open tasks before work resumes. Supports mixed repositories and folders without Git history, provides source evidence and coverage limits, and ends with a continuation brief. Inspects the target project read-only.
 
 Example: “Use repo-catch-up on `/path/to/project` before we continue.” It returns an orientation with source references and a continuation brief; specify an authorized output path if you want the brief saved.
+
+Use it when inheriting an old codebase, returning to a research project, or working with mixed code, notebooks, and documents. Do not use it when you already know the project and need code changes, debugging, training, or data mutation: catch-up is intentionally read-only.
 
 ### [Prompt Optimizer](./skills/prompt-optimizer/)
 
@@ -50,25 +70,37 @@ Supported logical commands include:
 - `/revise` — update the previously generated prompt
 - `/run` — execute the latest finalized prompt when possible
 
+Example: “Optimize this request for reviewing my ML experiment without changing the data or overstating the results.” It is useful before delegating a complex task to an AI agent. It is not necessary for a simple question, and it will not execute the original request unless `/run` or an explicit execution request is given.
+
 ### [ELI5](./skills/eli5/)
 
 Creates simple visual HTML explainers for beginners, with large visuals and minimal text. Invoke it with `/eli5 <topic>`.
+
+Example: `/eli5 how attention works in a transformer`. Use it for beginner teaching and non-specialist communication; do not use it for formal proofs, exact literature reviews, or production documentation.
 
 ### [Grilling](./skills/grilling/)
 
 Stress-tests plans and ideas through rounds of decision-tree questions. It activates only when the user explicitly says “grill.”
 
+Example: “Grill this plan to launch a voice-agent startup.” Use it when you want assumptions and dependencies challenged before committing. It is not the default brainstorming or ideation workflow.
+
 ### [Idea Refine](./skills/idea-refine/)
 
 Sharpens an existing idea into an actionable direction and ends with a one-page brief covering assumptions, MVP scope, and a “Not Doing” list.
+
+Example: “Refine my idea for a voice agent that helps clinics handle appointment calls.” Use it to turn a rough concept into a buildable brief; do not use it for a blank-topic idea request or when you explicitly want Grilling’s adversarial question rounds.
 
 ### [Professional Report Generator](./skills/professional-report-generator/)
 
 Researches a topic and creates a publication-ready Word report with structured findings, tables, citations, bibliography, and consistent formatting.
 
+Example: “Create a cited report on the enterprise voice-agent market for a technical leadership team.” Use it for white papers, market overviews, and formal briefings. It is not the right tool for a short answer, a README, or evidence locked inside inaccessible private sources.
+
 ### [Teach Me](./skills/teach-me/)
 
 An interactive learning and active-recall tutor for academic subjects, lecture notes, textbooks, PDFs, slides, technical concepts, and research papers. It teaches in manageable phases, evaluates recall, reinforces weak areas, and builds toward university-style examinations.
+
+Example: “Teach me backpropagation, quiz me without notes, and revisit what I get wrong.” Use it for durable understanding and exam preparation; it is not a one-shot answer generator or autonomous coding workflow.
 
 ### [Last30Days](./skills/last30days/SKILL.md)
 
@@ -85,6 +117,8 @@ Use it for current research, AI and ML developments, new papers and models, GitH
 ```
 
 Optional providers can be configured through the skill's masked setup commands. For example, `TAVILY_API_KEY` enables Tavily web search and `GITHUB_TOKEN` enables authenticated GitHub API access with higher rate limits. The skill supports diagnostics, source-health reporting, caching, retries and fallback behavior. It requires network access for live research and depends on the host's available browser, API and shell permissions.
+
+Example: “Find AI agent projects that became popular in the last seven days and explain why they matter.” Use it for time-sensitive discovery and recommendations, but not as proof of exhaustive coverage or a replacement for reading primary papers. Always inspect the report's citations and source-health notes when a provider is blocked, rate-limited, stale, or unconfigured.
 
 ## Repository structure
 
