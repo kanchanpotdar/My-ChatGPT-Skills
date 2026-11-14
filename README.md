@@ -1,6 +1,6 @@
 # My ChatGPT Skills
 
-This repository contains the **My ChatGPT Skills** plugin (version **0.1.5**), a collection of eight reusable skills for ChatGPT and Codex. Each skill is a self-contained set of instructions that gives ChatGPT a repeatable way to handle a specific type of task.
+This repository contains the **My ChatGPT Skills** plugin (version **0.1.5**), a collection of nine reusable skills for ChatGPT and Codex. Each skill is a self-contained set of instructions that gives ChatGPT a repeatable way to handle a specific type of task.
 
 ## How to use these skills
 
@@ -70,6 +70,22 @@ Researches a topic and creates a publication-ready Word report with structured f
 
 An interactive learning and active-recall tutor for academic subjects, lecture notes, textbooks, PDFs, slides, technical concepts, and research papers. It teaches in manageable phases, evaluates recall, reinforces weak areas, and builds toward university-style examinations.
 
+### [Last30Days](./skills/last30days/SKILL.md)
+
+Researches what people, researchers, developers, and organizations are discussing or releasing within a recent time window. It combines multiple sources, including Reddit, Hacker News, YouTube, GitHub, arXiv, Crossref, Hugging Face, Semantic Scholar, OpenReview, Digg, Techmeme, Tavily and configured web search providers.
+
+The skill retrieves source data in parallel, normalizes results into a shared format, filters by date and relevance, removes duplicates, scores evidence, clusters related findings, and produces a citation-aware report. It records partial coverage when a source is blocked, rate-limited, unavailable or unconfigured instead of treating that source as proof that no evidence exists.
+
+Use it for current research, AI and ML developments, new papers and models, GitHub project discovery, market or community signals, and recent recommendations. Example prompts:
+
+```text
+[$last30days] what are the newest AI agent projects this month?
+[$last30days] recent LLM research papers worth reading
+[$last30days] paid remote AI internships in India posted in the last 14 days
+```
+
+Optional providers can be configured through the skill's masked setup commands. For example, `TAVILY_API_KEY` enables Tavily web search and `GITHUB_TOKEN` enables authenticated GitHub API access with higher rate limits. The skill supports diagnostics, source-health reporting, caching, retries and fallback behavior. It requires network access for live research and depends on the host's available browser, API and shell permissions.
+
 ## Repository structure
 
 ```text
@@ -85,7 +101,8 @@ An interactive learning and active-recall tutor for academic subjects, lecture n
     ├── grilling/                      Explicit “grill” interviews
     ├── idea-refine/                    Idea refinement
     ├── professional-report-generator/ Research and Word reports
-    └── teach-me/                      Interactive tutoring
+    ├── teach-me/                      Interactive tutoring
+    └── last30days/                    Multi-source recent research
 ```
 
 Every skill has a `SKILL.md` entry point. Most also include a usage README; some have references, scripts, or optional `agents/openai.yaml` UI metadata. For example, README Architect separates its workflow, README design guidance, verification guidance, and read-only checker.
@@ -112,7 +129,7 @@ Inventory uses Git when run at a Git repository root, or `rg` for ignore-aware d
 
 ## Status and limitations
 
-The repository contains eight skill definitions and their supporting resources. Skill availability does not establish output quality across all projects or hosts. Repository-wide benchmark results and an automated CI test suite are not included. README Architect has received a local synthetic-repository trial and focused checker tests; these are limited validation, not a cross-project benchmark.
+The repository contains nine skill definitions and their supporting resources. Skill availability does not establish output quality across all projects or hosts. Repository-wide benchmark results and an automated CI test suite are not included. README Architect has received a local synthetic-repository trial and focused checker tests; Last30Days has source-adapter and normalization tests plus live source smoke tests. These are limited validation, not a cross-project benchmark.
 
 Report generation requires the research and document tooling described in its skill. Other workflows likewise depend on accessible inputs and host capabilities. Logical slash commands in skill instructions are not guaranteed native commands in every client.
 
